@@ -1,0 +1,52 @@
+section{
+    width: 350px;
+    height:450px; 
+    text-align: center;
+}
+#splash{
+    background: #58BFEC;
+}
+#imgSplash{
+    width: 500px;
+    height: 200px;
+}
+
+#home{
+    background: rgb(73, 136, 130);
+    
+}
+#imagenHome{
+    width: 100px;
+    height: 100px;
+}
+#imgJuego{
+    width: 200px;
+    height: 200px;
+}
+#juego{
+    background: #5C78BF;
+}
+.boton{
+    background-color: navy;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+
+}
+.volver{
+    margin-left: -300px;
+    line-height: 50px;
+
+}
+#instrucciones p{
+    margin:25px;
+    text-align: left;
+
+}
+#instrucciones{
+    background:rgb(164, 124, 228);
+    
+}
+#creditos{
+    background: #C2E3E9;
+}
