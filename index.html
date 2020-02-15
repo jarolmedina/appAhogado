@@ -6,41 +6,76 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ahogado</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <script>
+        var secciones = [];
+        var tiempo_splash = 2000;
+    
+        window.onload = function(){
+            inicializarReferencias();
+            setTimeout(cambiarSplash,tiempo_splash);
+        }
+    
+        function inicializarReferencias(){
+            secciones[1] = document.getElementById("seccion_1");
+            secciones[2] = document.getElementById("seccion_2");
+            secciones[3] = document.getElementById("seccion_3");
+            secciones[4] = document.getElementById("seccion_4");
+            secciones[5] = document.getElementById("seccion_5");
+        }
+    
+        function cambiarSplash(){
+            secciones[1].className = "splash oculto";
+            secciones[2].className = "home animated zoomInUp";
+        }
+    
+        //https://developer.mozilla.org/es/docs/Web/API/Element/classList
+        //https://www.youtube.com/watch?v=2z0wMNHPbzk
+        function cambiarSeccion(id_seccion){
+    
+            for (var i in secciones) {
+                secciones[i].classList.add("oculto");
+            }
+    
+            secciones[id_seccion].classList.add("animated");
+            secciones[id_seccion].classList.add("fadeInRight");
+            secciones[id_seccion].classList.remove("oculto");
+        }
+        </script>
 </head>
 <body>
 
-    <section id="splash">
+    <section id="seccion_1" class="splash animated fadeInDown">
         <br>       
         <h1>SPLASH</h1>      
         <img  src="img/ilustracion-empresario-ahogado-agua_147838-32.jpg" alt="ahogado">
     </section>
     
-    <section id="home">
+    <section id="seccion_2" class="home oculto ">
         <br>       
         <h1>AHOGADO</h1>
         <br>
         <img id="imagenHome" src="img/ilustracion-empresario-ahogado-agua_147838-32.jpg" alt="ahogado">
-        <br><br><br><br>
-        <a href="#">Juego</a>
         <br><br>
-        <a href="#">Instrucciones</a>
-        <br><br>
-        <a href="#">Créditos</a>
+        <a href="javascript:void();" onClick="cambiarSeccion(3);">Juego</a><br><br>
+		<a href="javascript:void();" onClick="cambiarSeccion(4);">Instrucciones</a><br><br>
+		<a href="javascript:void();" onClick="cambiarSeccion(5);">Créditos</a><br>
 
     </section>
 
-    <section id="juego">
+    <section id="seccion_3" class="juego oculto">
         <br>
-        <a href="#" class="boton volver">&lt;</a>
+        <a href="javascript:void();" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
         <br>       
         <h1>Juego</h1>
         <br>
         <img id="imgJuego" src="img/IMAGEN AHORCADO.jpg" alt="ahogado">
     </section>
 
-    <section id="instrucciones">
+    <section id="seccion_4" class="instrucciones oculto">
         
-        <a href="#" class="boton volver">&lt;</a>
+        <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
         <br>       
         <h1>¿CÓMO SE JUEGA?</h1>
         
@@ -56,11 +91,11 @@
         </p>
         <a href="#" class="boton"><</a>
         &nbsp;&nbsp;
-        <a href="" class="boton">></a>
+        <a href="#" class="boton">></a>
         </section>
 
-    <section id="creditos">
-        <a href="#" class="boton volver"><</a>
+    <section id="seccion_5" class="creditos oculto"> 
+        <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
         <br>       
         <h1>Créditos-Estudiantes</h1>
         <br>
