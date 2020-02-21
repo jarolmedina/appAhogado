@@ -12,6 +12,7 @@ function inicializarReferencias(){
     secciones[3] = document.getElementById("seccion_3");
     secciones[4] = document.getElementById("seccion_4");
     secciones[5] = document.getElementById("seccion_5");
+    secciones[6] = document.getElementById("seccion_6");
 }
 
 function cambiarSplash(){
