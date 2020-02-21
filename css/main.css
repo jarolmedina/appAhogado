@@ -53,3 +53,31 @@ section{
 .oculto{
     display:none;
 }
+.botonPuntaje{
+    background-color: navy;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+
+    margin-left: 0px;
+    line-height: 50px;
+
+}
+
+.botonHomeVolver{
+    background-color: navy;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+
+    margin-left: 0px;
+    line-height: 50px;
+
+}
+
+.botonesHome{
+
+    width: 150px;
+    height: 30px;
+
+}
