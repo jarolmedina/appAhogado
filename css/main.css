@@ -2,6 +2,10 @@ section{
     width: 350px;
     height:450px; 
     text-align: center;
+    font-family: 'Trade Winds';
+}
+button{
+	font-family: 'Trade Winds';
 }
 .splash{
     background: #58BFEC;
@@ -31,11 +35,14 @@ section{
     color: white;
     padding: 10px;
     text-decoration: none;
+    border-radius:12px;
 
 }
 .volver{
+  
     margin-left: -300px;
     line-height: 50px;
+
 
 }
 .instrucciones p{
@@ -55,6 +62,7 @@ section{
 }
 .botonPuntaje{
     background-color: navy;
+    border-radius:12px;
     color: white;
     padding: 10px;
     text-decoration: none;
@@ -66,6 +74,7 @@ section{
 
 .botonHomeVolver{
     background-color: navy;
+    border-radius:12px;
     color: white;
     padding: 10px;
     text-decoration: none;
@@ -77,7 +86,57 @@ section{
 
 .botonesHome{
 
-    width: 150px;
-    height: 30px;
+    width: 200px;
+    height: 50px;
+    border-radius:12px;
+    font-size: 17px;
 
+}
+#posicionBotonesHome{
+    position: absolute;
+    top: 240px;
+    left: 80px;
+
+}
+.fotoCreditos{
+    position: absolute;
+    border-radius: 12px;
+}
+#fotoJarol{
+    top: 135px;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    
+
+}
+#etiquetaJarol{
+    position: absolute;
+    top: 160px;
+    left: 100px;
+}
+
+#fotoDaniel{
+    top: 245px;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+
+}
+#etiquetaDaniel{
+    position: absolute;
+    top: 275px;
+    left: 100px;
+}
+#fotoLaura{
+    top: 355px;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+
+}
+#etiquetaLaura{
+    position: absolute;
+    top: 385px;
+    left: 100px;
 }

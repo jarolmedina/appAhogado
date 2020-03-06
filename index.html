@@ -7,6 +7,7 @@
     <title>Ahogado - Juego</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
     <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
@@ -20,15 +21,15 @@
     <section id="seccion_2" class="home oculto ">
         <br>       
         <h1>AHOGADO</h1>
-        <br>
         <img id="imagenHome" src="img/ilustracion-empresario-ahogado-agua_147838-32.jpg" alt="ahogado">
-        <br><br><br>
-        <button onclick="cambiarSeccion(3);" class="botonesHome">Juego</button>      
         <br><br>
-        <button onclick="cambiarSeccion(4);" class="botonesHome">Instrucciones</button>
-        <br><br>
-        <button onclick="cambiarSeccion(5);" class="botonesHome">Créditos</button>
-
+        <div id="posicionBotonesHome">
+            <button onclick="cambiarSeccion(3);" class="botonesHome">Juego</button>      
+            <br><br>
+            <button onclick="cambiarSeccion(4);" class="botonesHome">Instrucciones</button>
+            <br><br>
+            <button onclick="cambiarSeccion(5);" class="botonesHome">Créditos</button>
+        </div>
     </section>
 
     <section id="seccion_3" class="juego oculto">
@@ -56,9 +57,7 @@
             donde la metáfora del juego cambia, pasando de ser un hombre ahorcado a un buzo que se está ahogando, al cual
             los errores, le quitarán oxígeno a su tanque, y por el contrario, los aciertos lo acercarán más a la superficie
             donde lo estará esperando un barco rescatista.
-        </p>
-        <br>
-        <br>
+        </p>       
         <a href="#" onclick="cambiarSeccion(6);" class="boton"><</a>
         &nbsp;&nbsp;
         <a href="#" onclick="cambiarSeccion(6);" class="boton">></a>
@@ -67,24 +66,24 @@
     <section id="seccion_5" class="creditos oculto"> 
         <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
         <br>       
-        <h1>Créditos-Estudiantes</h1>
+        <h1>Créditos - Estudiantes</h1>
+        <br>  
+        <span id="etiquetaJarol">Jarol Medina Marín / Ingeniero</span>
         <br>
-        <img src="" alt="foto">
-        &nbsp;&nbsp;
-        <span>Carlos Daniel Fernández González / Ingeniero</span>
+        <img class="fotoCreditos" id="fotoJarol" src="img/fotoJarol.jpeg" alt="foto">
+        <br>  
+        <span id="etiquetaDaniel">Carlos Daniel Fernandez / Ingeniero</span>
         <br>
-        <img src="" alt="foto">
-        &nbsp;&nbsp;
-        <span>Jarol Medina Marín / Ingeniero</span>
+        <img class="fotoCreditos" id="fotoDaniel" src="img/fotoDaniel.jpeg" alt="foto">
+        <br>  
+        <span id="etiquetaLaura">Laura Barrios / Diseñadora</span>
         <br>
-        <img src="" alt="foto">
-        &nbsp;&nbsp;
-        <span>Laura Barrios / Diseñadora</span>
-        
+        <img class="fotoCreditos" id="fotoLaura" src="img/fotoDaniel.jpeg" alt="foto">
+       
         
     </section>
 
-    <section id="seccion_6" class="instrucciones oculto"> 
+    <section id="seccion_6" class="instrucciones oculto">         
         <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
         <br>          
         <h1>AHOGADO-2</h1>
@@ -94,8 +93,6 @@
             los errores, le quitarán oxígeno a su tanque, y por el contrario, los aciertos lo acercarán más a la superficie
             donde lo estará esperando un barco rescatista.
         </p>
-        <br>
-        <br>
         <a href="#" onclick="cambiarSeccion(4);" class="boton"><</a>
         &nbsp;&nbsp;
         <a href="#" onclick="cambiarSeccion(4);" class="boton">></a>
