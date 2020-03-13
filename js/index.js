@@ -1,25 +1,32 @@
 var secciones = [];
 var tiempo_splash = 2;
-const palabras = ["Tortuga","Pez","Ballena","Agua","Corales"];
+const palabras = ["CAPITAN","GAVIOTA","NAVEGAR","SIRENA","FRAGATA","CAÑONES","BAÑADOR"];
+const preguntas = ["JEFE DEL BARCO","AVE MARINERA","MANIOBRAR UN BARCO","CRIATURA MITOLÓGICA","BUQUE DE GUERRA","ARMA DE PÓLVORA",
+"VESTIMENTA PARA NADAR"];
 var vidas;
 var puntos;
 var divJuego;
-var palabraSelecionada;
+var palabraSeleccionada;
 var htmlLineas = [];
-var spanLetraJuego;
+var spanPregunta;
+var aciertos;
 
 window.onload = function(){
     inicializarReferencias();
-    this.palabraSelecionada = palabraAleatoria();
-    this.console.log(this.palabraSelecionada);
-    llenarLineas();
+    initJuego();
+    setTimeout(cambiarSplash,tiempo_splash);
+}
+function initJuego(){
+    this.palabraSeleccionada = palabraAleatoria();
     vidas = 5;
     puntos = 1000;
-    setTimeout(cambiarSplash,tiempo_splash);
+    this.aciertos = 0;
+    llenarLineas();
 }
 
 function inicializarReferencias(){
-    divJuego = document.getElementById("juego");
+    divJuego = document.getElementById("adivinar");
+    spanPregunta = document.getElementById("pregunta");
     secciones[1] = document.getElementById("seccion_1");
     secciones[2] = document.getElementById("seccion_2");
     secciones[3] = document.getElementById("seccion_3");
@@ -28,7 +35,6 @@ function inicializarReferencias(){
     secciones[6] = document.getElementById("seccion_6");
     secciones[7] = document.getElementById("seccion_7");
     secciones[8] = document.getElementById("seccion_8");
-    secciones[9] = document.getElementById("seccion_9");
 }
 
 function cambiarSplash(){
@@ -51,41 +57,50 @@ function cambiarSeccion(id_seccion){
 
 
 function palabraAleatoria() {
-    return palabras[parseInt(Math.random()*(palabras.length-1))];
+    var indice = parseInt(Math.random()*(palabras.length-1));
+    spanPregunta.innerHTML = preguntas[indice];
+    console.log(spanPregunta.innerHTML);
+    return palabras[indice];
 }
 function llenarLineas() {
     console.log(this.palabraSeleccionada);
     for(var i = 0; i<this.palabraSeleccionada.length;i++){
-        console.log(this.palabraSelecionada);
+        console.log(this.palabraSeleccionada);
         this.htmlLineas[i] = '<span class = "letra">_</span>';
     }
-    divJuego.innerHTML(this.htmlLineas);
+    divJuego.innerHTML = this.htmlLineas;
 }
 function procesarLetra(letra) {
-    spanLetraJuego = document.getElementById(letra);
     let encontrada = false;
-    for(var i = 0; i < this.palabraSelecionada.length;i++){
-        if(letra == this.palabraSelecionada[i]){
+    for(var i = 0; i < this.palabraSeleccionada.length;i++){
+        if(letra == this.palabraSeleccionada.charAt(i).toUpperCase()){
             this.htmlLineas[i] = '<u>'+letra+'</u>';
             encontrada = true;
+            aciertos++;
         }
     }
+    
     if(!encontrada){
         if(vidas>0){
+            puntos-=200;
             vidas--;
         }else if(vidas == 0){
+            puntos-=200;
             perderJuego();
         }
     }else{
+        divJuego.innerHTML = this.htmlLineas;
         puntos+=200;
     }
-    if(palabraSelecionada == htmlLineas){
+    if(aciertos == palabraSeleccionada.length){
         ganarJuego();
     }
 }
 function ganarJuego(){
-    cambiarSeccion(8);
+    initJuego();
+    cambiarSeccion(7);
 }
 function perderJuego(){
-    cambiarSeccion(9);
+    initJuego();
+    cambiarSeccion(8);
 }
