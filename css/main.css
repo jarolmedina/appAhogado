@@ -10,6 +10,23 @@ button{
 .splash{
     background: #58BFEC;
 }
+#letrasBotones{
+	position: absolute;
+	width: 250px;
+	top: 320px;
+	left: 50px;
+}
+#letrasJuego{
+    position: absolute;
+	width: 250px;
+	top: 280px;
+	left: 50px;
+}
+.letra{
+    cursor: pointer;
+    border: black solid;
+    padding: 1;
+}
 #imgSplash{
     width: 500px;
     height: 200px;

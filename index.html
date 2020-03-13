@@ -42,24 +42,46 @@
         &nbsp;
         <a href="#" onClick="" class="botonPuntaje">?</a>
         <br>       
-        <h1>Juego</h1>
-        <br>
-        <img id="imgJuego" src="img/IMAGEN AHORCADO.jpg" alt="ahogado">
+        <div id="juego"></div>
+		<div id="letrasBotones">
+			<span id="A" class="letra" onclick="procesarLetra('A');">A</span>
+			<span id="B" class="letra" onclick="procesarLetra('B');">B</span>
+			<span id="C" class="letra" onclick="procesarLetra('C');">C</span>
+			<span id="D" class="letra" onclick="procesarLetra('D');">D</span>
+			<span id="E" class="letra" onclick="procesarLetra('E');">E</span>
+			<span id="F" class="letra" onclick="procesarLetra('F');">F</span>
+			<span id="G" class="letra" onclick="procesarLetra('G');">G</span>
+			<span id="H" class="letra" onclick="procesarLetra('H');">H</span>
+			<span id="I" class="letra" onclick="procesarLetra('I');">I</span>
+			<span id="J" class="letra" onclick="procesarLetra('J');">J</span>
+			<span id="K" class="letra" onclick="procesarLetra('K');">K</span>
+			<span id="L" class="letra" onclick="procesarLetra('L');">L</span>
+			<span id="M" class="letra" onclick="procesarLetra('M');">M</span>
+			<span id="N" class="letra" onclick="procesarLetra('N');">N</span>
+			<span id="O" class="letra" onclick="procesarLetra('O');">O</span>
+			<span id="P" class="letra" onclick="procesarLetra('P');">P</span>
+			<span id="Q" class="letra" onclick="procesarLetra('Q');">Q</span>
+			<span id="R" class="letra" onclick="procesarLetra('R');">R</span>
+			<span id="S" class="letra" onclick="procesarLetra('S');">S</span>
+			<span id="T" class="letra" onclick="procesarLetra('T');">T</span>
+			<span id="U" class="letra" onclick="procesarLetra('U');">U</span>
+			<span id="V" class="letra" onclick="procesarLetra('V');">V</span>
+			<span id="W" class="letra" onclick="procesarLetra('W');">W</span>
+			<span id="X" class="letra" onclick="procesarLetra('X');">X</span>
+			<span id="Y" class="letra" onclick="procesarLetra('Y');">Y</span>
+			<span id="Z" class="letra" onclick="procesarLetra('Z');">Z</span>
+		</div>
     </section>
 
     <section id="seccion_4" class="instrucciones oculto">
         
         <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
-        <br>       
-        <h1>AHOGADO</h1>
+        <br>
         <p>
-            El objetivo del juego es adivinar la palabra que se está preguntando, con una temática del mundo marino,
-            donde la metáfora del juego cambia, pasando de ser un hombre ahorcado a un buzo que se está ahogando, al cual
-            los errores, le quitarán oxígeno a su tanque, y por el contrario, los aciertos lo acercarán más a la superficie
-            donde lo estará esperando un barco rescatista.
-        </p>       
-        <a href="#" onclick="cambiarSeccion(6);" class="boton"><</a>
-        &nbsp;&nbsp;
+            Bienvenido/a al clásico juego de ahorcado, ¡en esta ocasión lo llamaremos ahogado!.<br>
+            ¿Quién no ha jugado a este juego en el colegio?. ¿Serás capaz de encontrar la palabra secreta y completar a nuestro buzo para que pueda seguir en su misión de salvar el mundo marino?.<br>
+            Si no consigues averiguar una palabra no te preocupes, puedes utilizar nuestra pista que te ayudará a descubrir la palabra.
+        </p>
         <a href="#" onclick="cambiarSeccion(6);" class="boton">></a>
     </section>
 
@@ -85,17 +107,11 @@
 
     <section id="seccion_6" class="instrucciones oculto">         
         <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
-        <br>          
-        <h1>AHOGADO-2</h1>
+        <br>
         <p>
-            El objetivo del juego es adivinar la palabra que se está preguntando, con una temática del mundo marino,
-            donde la metáfora del juego cambia, pasando de ser un hombre ahorcado a un buzo que se está ahogando, al cual
-            los errores, le quitarán oxígeno a su tanque, y por el contrario, los aciertos lo acercarán más a la superficie
-            donde lo estará esperando un barco rescatista.
+            AYUDA<br>-Da clic en el ? y utiliza esta imagen para guiarte y así descubrir la palabra.
         </p>
         <a href="#" onclick="cambiarSeccion(4);" class="boton"><</a>
-        &nbsp;&nbsp;
-        <a href="#" onclick="cambiarSeccion(4);" class="boton">></a>
         
     </section>
 
@@ -110,7 +126,43 @@
         <br>       
     </section>
     
+    <section id="seccion_8" class="creditos oculto"> 
+        <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
+        <br>       
+        <h1>Créditos - Estudiantes</h1>
+        <br>  
+        <span id="etiquetaJarol">Jarol Medina Marín / Ingeniero</span>
+        <br>
+        <img class="fotoCreditos" id="fotoJarol" src="img/fotoJarol.jpeg" alt="foto">
+        <br>  
+        <span id="etiquetaDaniel">Carlos Daniel Fernandez / Ingeniero</span>
+        <br>
+        <img class="fotoCreditos" id="fotoDaniel" src="img/fotoDaniel.jpeg" alt="foto">
+        <br>  
+        <span id="etiquetaLaura">Laura Barrios / Diseñadora</span>
+        <br>
+        <img class="fotoCreditos" id="fotoLaura" src="img/fotoDaniel.jpeg" alt="foto">
+    </section>
 
+    <section id="seccion_9" class="creditos oculto"> 
+        <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
+        <br>       
+        <h1>Créditos - Estudiantes</h1>
+        <br>  
+        <span id="etiquetaJarol">Jarol Medina Marín / Ingeniero</span>
+        <br>
+        <img class="fotoCreditos" id="fotoJarol" src="img/fotoJarol.jpeg" alt="foto">
+        <br>  
+        <span id="etiquetaDaniel">Carlos Daniel Fernandez / Ingeniero</span>
+        <br>
+        <img class="fotoCreditos" id="fotoDaniel" src="img/fotoDaniel.jpeg" alt="foto">
+        <br>  
+        <span id="etiquetaLaura">Laura Barrios / Diseñadora</span>
+        <br>
+        <img class="fotoCreditos" id="fotoLaura" src="img/fotoDaniel.jpeg" alt="foto">
+       
+        
+    </section>
 
 
 </body>
