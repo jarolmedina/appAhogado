@@ -10,6 +10,15 @@ button{
 .splash{
     background: #58BFEC;
 }
+.juego{
+    background: #5C78BF;
+}
+.pregunta{
+    position: absolute;
+	width: 250px;
+	top: 100px;
+	left: 50px;  
+}
 #letrasBotones{
 	position: absolute;
 	width: 250px;
@@ -44,8 +53,10 @@ button{
     width: 200px;
     height: 200px;
 }
-.juego{
-    background: #5C78BF;
+#adivinar{
+    position:absolute;
+    top:270px;
+    left:120px;
 }
 .boton{
     background-color: navy;
