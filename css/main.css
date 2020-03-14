@@ -10,6 +10,41 @@ button{
 .splash{
     background: #58BFEC;
 }
+#letrasBotones{
+	position: absolute;
+	width: 250px;
+	top: 300px;
+	left: 50px;
+}
+#letrasBotones2{
+	position: absolute;
+	width: 250px;
+	top: 340px;
+	left: 50px;
+}
+#letrasBotones3{
+	position: absolute;
+	width: 250px;
+	top: 380px;
+	left: 50px;
+}
+#letrasBotones4{
+	position: absolute;
+	width: 250px;
+	top: 415px;
+	left: 50px;
+}
+
+.letra{
+    cursor: pointer;
+    border: black;
+    padding: 1px 4px;
+    margin: 5px;
+    margin-bottom: 5px;
+    border-radius:5px;
+    font-size: 17px;
+    box-shadow: 5px 5px 7px rgb(0, 0, 0);
+}
 #imgSplash{
     width: 500px;
     height: 200px;
