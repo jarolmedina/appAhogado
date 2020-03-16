@@ -12,9 +12,11 @@ var spanLetraJuego;
 window.onload = function(){
     inicializarReferencias();
 }
+
 function inicializarReferencias(){
     divJuego = document.getElementById("juego");
 }
+
 class Juego{
     constructor(){
         palabraAleatoria();
@@ -23,18 +25,22 @@ class Juego{
         puntos = 1000;
     }
 }
+
 function palabraAleatoria() {
     palabraSelecionada = palabras[Math.random()*(palabras.length)];
 }
+
 function reiniciarJuego() {
     this.Juego = new Juego();
 }
+
 function llenarLineas(palabra) {
     palabra.forEach(letra => {
-        htmlLineas += '<span class = "letra">_</span>';
+        htmlLineas += '<span>_</span>';
     });
     divJuego.innerHTML(htmlLineas);
 }
+
 function procesarLetra(letra) {
     spanLetraJuego = document.getElementById(letra);
     let encontrada = false;
@@ -57,6 +63,6 @@ function procesarLetra(letra) {
         ganarJuego();
     }
 }
-function ganarJuego(){
 
+function ganarJuego(){
 }

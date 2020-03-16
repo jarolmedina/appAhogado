@@ -1,41 +1,39 @@
+html{
+    font-family: sans-serif;
+
+}
+section{
+    background-image: url("../img/fondoSeleccion.jpeg");
+}
+
 section{
     width: 350px;
     height:450px; 
     text-align: center;
-    font-family: 'Trade Winds';
+    
 }
-button{
-	font-family: 'Trade Winds';
-}
+
 .splash{
     background: #58BFEC;
 }
-#letrasBotones{
-	position: absolute;
-	width: 250px;
-	top: 300px;
-	left: 50px;
+.juego{
+    
+    color: rgb(51, 54, 212);
 }
-#letrasBotones2{
+.pregunta{
+    position: absolute;
+	width: 250px;
+	top: 59px;
+	left: 50px;  
+}
+#letrasBotones{
 	position: absolute;
 	width: 250px;
 	top: 340px;
 	left: 50px;
 }
-#letrasBotones3{
-	position: absolute;
-	width: 250px;
-	top: 380px;
-	left: 50px;
-}
-#letrasBotones4{
-	position: absolute;
-	width: 250px;
-	top: 415px;
-	left: 50px;
-}
-
 .letra{
+    font-weight: bolder;
     cursor: pointer;
     border: black;
     padding: 1px 4px;
@@ -45,15 +43,13 @@ button{
     font-size: 17px;
     box-shadow: 5px 5px 7px rgb(0, 0, 0);
 }
+
 #imgSplash{
     width: 500px;
     height: 200px;
 }
 
-.home{
-    background: rgb(73, 136, 130);
-    
-}
+
 #imagenHome{
     width: 100px;
     height: 100px;
@@ -62,8 +58,10 @@ button{
     width: 200px;
     height: 200px;
 }
-.juego{
-    background: #5C78BF;
+#adivinar {
+    position: absolute;
+    top: 294px;
+    left: 20%;
 }
 .boton{
     background-color: navy;
@@ -85,15 +83,9 @@ button{
     text-align: left;
 
 }
-.instrucciones{
-    background:rgb(164, 124, 228);
-    
-}
-.creditos{
-    background: #C2E3E9;
-}
+
 .oculto{
-    display:none;
+    display:none !important;
 }
 .botonPuntaje{
     background-color: navy;
@@ -125,7 +117,7 @@ button{
     height: 38px;
     border-radius:35px;
     font-size: 17px;
-    box-shadow: 5px 5px 7px rgb(0, 0, 0);      /* Sombra superior sin desenfoque */
+    box-shadow: rgb(51, 163, 255) 0 0 10px 5px ;     /* Sombra superior sin desenfoque */
     
 
 }
@@ -137,8 +129,10 @@ button{
 }
 .fotoCreditos{
     position: absolute;
-    border-radius: 12px;
+    border-radius: 50%;
 }
+
+
 #fotoJarol{
     top: 135px;
     left: 20px;
@@ -158,6 +152,10 @@ button{
     left: 20px;
     width: 70px;
     height: 70px;
+    background-image: url("../img/fotoDaniel.jpeg");
+    background-size: cover;
+    background-position: center;
+
 
 }
 #etiquetaDaniel{
@@ -170,10 +168,110 @@ button{
     left: 20px;
     width: 70px;
     height: 70px;
+    background-image: url("../img/laura.jpeg");
+    background-size: cover;
+    background-position: center;
 
 }
 #etiquetaLaura{
     position: absolute;
     top: 385px;
     left: 100px;
+}
+.botonesGanastePerdiste{
+    position: absolute;
+    top: 400px;
+    left: 50px;
+}
+#ganastePerdiste{
+    font-family: 'kg happy';
+    font-size: 30px;
+}
+
+#divImagen {
+    width: 150px;
+    height: 136px;
+    position: relative;
+    top: 72px;
+    left: 102px;
+}
+.foto1{
+
+    background-image: url("../img/1.png");
+    background-size: cover;
+    background-position:center;
+
+
+}
+
+.foto2{
+
+    background-image: url("../img/2.png");
+    background-size: cover;
+    background-position:center;
+}
+
+.foto3{
+
+    background-image: url("../img/3.png");
+    background-size: cover;
+    background-position:center;
+}
+
+.foto4{
+
+    background-image: url("../img/4.png");
+    background-size: cover;
+    background-position:center;
+}
+.divAyuda{
+    width: 70%;
+    background-color: white;
+    padding: 1em;
+    margin-left: 10%;
+    margin-top: -5%;
+    border-radius: 10%;
+    box-shadow: rgb(51, 163, 255) 0 0 10px 5px ; 
+}
+
+.divCreditos{
+    width: 92%;
+    height: 83%;
+    margin-left: 4%;
+    padding-top: 1em;
+    background-color: white;
+    border-radius: 10%;
+    box-shadow: rgb(51, 163, 255) 0 0 10px 5px ; 
+}
+.divImgAyuda{
+    position: absolute;
+    z-index: 10;
+    background-color: rgb(109, 109, 255);
+    width: 70%;
+    height: 64%;
+    left: 14.5%;
+    top: 31%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    box-shadow: rgb(51, 163, 255) 0 0 10px 5px ; 
+}
+#divPuntos{
+    
+    width: 69%;
+    height: 15%;
+    left: 15.5%;
+    top: 18%;
+    font-size: 2em;
+    color: white;
+
+}
+.ahogadoInicio{
+    background: white;
+    width: 100%;
+    font-size: 2.8em;
+    padding: 1em 0;
+    color: rgb(51, 163, 255);
+    border-bottom: solid 2px rgb(51, 163, 255);
 }

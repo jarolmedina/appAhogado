@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Ahogado - Juego</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -19,8 +20,8 @@
     </section>
     
     <section id="seccion_2" class="home oculto ">
-        <br>       
-       
+        <br> 
+        <h1 class="ahogadoInicio">AHOGADO</h1>          
         <br><br>
         <div id="posicionBotonesHome">
             <button onclick="cambiarSeccion(3);" class="botonesHome">Jugar</button>      
@@ -35,106 +36,99 @@
         <br>     
         <a href="javascript:void();" onClick="cambiarSeccion(2);" class="botonHomeVolver">&lt;</a>
         &nbsp;
-        <a href="#" onClick="cambiarSeccion(7);" class="botonPuntaje">Puntaje</a>
+        <a href="#" onClick="mostrarPuntos();" class="botonPuntaje">Puntaje</a>
         &nbsp;
         <a href="#" onClick="" class="botonPuntaje">Vidas</a>
         &nbsp;
-        <a href="#" onClick="" class="botonPuntaje">?</a>
-        <br>       
-        <div id="juego"></div>
+        <a href="#" onClick="ayudita();" class="botonPuntaje">?</a>   
 
-		<div id="letrasBotones">
-            <span id="A" class="letra" onclick="procesarLetra('A');">A</span>
-            
-			<span id="B" class="letra" onclick="procesarLetra('B');">B</span>
-            
-            <span id="C" class="letra" onclick="procesarLetra('C');">C</span>
-            
-            <span id="D" class="letra" onclick="procesarLetra('D');">D</span>
-            
-            <span id="E" class="letra" onclick="procesarLetra('E');">E</span>
-            
-            <span id="F" class="letra" onclick="procesarLetra('F');">F</span>
-            
-            <span id="G" class="letra" onclick="procesarLetra('G');">G</span>         
-        </div>
+        <div class="divImgAyuda" id="divImgAyuda"></div>  
+        <div class="divImgAyuda" id="divPuntos"></div>
 
-        <div id="letrasBotones2">
-            <span id="H" class="letra" onclick="procesarLetra('H');">H</span>
-            
-            <span id="I" class="letra" onclick="procesarLetra('I');">I</span>
+        <h1 id = "pregunta" class="pregunta"></h1>
 
-            <span id="J" class="letra" onclick="procesarLetra('J');">J</span>
-            
-            <span id="K" class="letra" onclick="procesarLetra('K');">K</span>
-            
-            <span id="L" class="letra" onclick="procesarLetra('L');">L</span>
-            
-            <span id="M" class="letra" onclick="procesarLetra('M');">M</span>
-            
-            <span id="N" class="letra" onclick="procesarLetra('N');">N</span>
-            
-           
-            
+        <div id="divImagen" class="sinFoto"></div>
+        <br>
+        <div id="adivinar">
         </div>   
-
-        <div id="letrasBotones3">
-            <span id="O" class="letra" onclick="procesarLetra('O');">O</span>
-            <span id="P" class="letra" onclick="procesarLetra('P');">P</span>
-            
-            <span id="Q" class="letra" onclick="procesarLetra('Q');">Q</span>
-            
-            <span id="R" class="letra" onclick="procesarLetra('R');">R</span>
-            <span id="S" class="letra" onclick="procesarLetra('S');">S</span>
-            
-            <span id="T" class="letra" onclick="procesarLetra('T');">T</span>
-            
-            <span id="U" class="letra" onclick="procesarLetra('U');">U</span>
-            
-            
+		<div id="letrasBotones">
+        
+        <div>
+            <span class="letra" onclick="procesarLetra('A');">A</span>
+			<span class="letra" onclick="procesarLetra('B');">B</span>
+			<span class="letra" onclick="procesarLetra('C');">C</span>
+			<span class="letra" onclick="procesarLetra('D');">D</span>
+			<span class="letra" onclick="procesarLetra('E');">E</span>
+			<span class="letra" onclick="procesarLetra('F');">F</span>
+            <span class="letra" onclick="procesarLetra('G');">G</span>  
         </div>
-
-        <div id="letrasBotones4">
-            <span id="V" class="letra" onclick="procesarLetra('V');">V</span>
-
-            <span id="W" class="letra" onclick="procesarLetra('W');">W</span>
-            
-            <span id="X" class="letra" onclick="procesarLetra('X');">X</span>
-            
-            <span id="Y" class="letra" onclick="procesarLetra('Y');">Y</span>
-            
-            <span id="Z" class="letra" onclick="procesarLetra('Z');">Z</span>
+        
+        <div>
+			<span class="letra" onclick="procesarLetra('H');">H</span>
+			<span class="letra" onclick="procesarLetra('I');">I</span>
+			<span class="letra" onclick="procesarLetra('J');">J</span>
+			<span class="letra" onclick="procesarLetra('K');">K</span>
+			<span class="letra" onclick="procesarLetra('L');">L</span>
+			<span class="letra" onclick="procesarLetra('M');">M</span>
+            <span class="letra" onclick="procesarLetra('N');">N</span>
         </div>
+        
+        <div>
+            <span class="letra" onclick="procesarLetra('Ñ');">Ñ</span>
+			<span class="letra" onclick="procesarLetra('O');">O</span>
+			<span class="letra" onclick="procesarLetra('P');">P</span>
+			<span class="letra" onclick="procesarLetra('Q');">Q</span>
+			<span class="letra" onclick="procesarLetra('R');">R</span>
+			<span class="letra" onclick="procesarLetra('S');">S</span>
+            <span class="letra" onclick="procesarLetra('T');">T</span>
+        </div>
+        
+        <div>
+			<span class="letra" onclick="procesarLetra('U');">U</span>
+			<span class="letra" onclick="procesarLetra('V');">V</span>
+			<span class="letra" onclick="procesarLetra('W');">W</span>
+			<span class="letra" onclick="procesarLetra('X');">X</span>
+			<span class="letra" onclick="procesarLetra('Y');">Y</span>
+            <span class="letra" onclick="procesarLetra('Z');">Z</span>
+        </div>
+		</div>
     </section>
 
     <section id="seccion_4" class="instrucciones oculto">
         
         <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
         <br>
-        <p>
-            Bienvenido/a al clásico juego de ahorcado, ¡en esta ocasión lo llamaremos ahogado!.<br>
-            ¿Quién no ha jugado a este juego en el colegio?. ¿Serás capaz de encontrar la palabra secreta y completar a nuestro buzo para que pueda seguir en su misión de salvar el mundo marino?.<br>
-            Si no consigues averiguar una palabra no te preocupes, puedes utilizar nuestra pista que te ayudará a descubrir la palabra.
-        </p>
-        <a href="#" onclick="cambiarSeccion(6);" class="boton">></a>
+        <div class="divAyuda">
+
+            <p>
+                Bienvenido/a al clásico juego de ahorcado, ¡en esta ocasión lo llamaremos ahogado!.<br>
+                ¿Quién no ha jugado a este juego en el colegio?. ¿Serás capaz de encontrar la palabra secreta y completar a nuestro buzo para que pueda seguir en su misión de salvar el mundo marino?.<br>
+                Si no consigues averiguar una palabra no te preocupes, puedes utilizar nuestra pista que te ayudará a descubrir la palabra.
+            </p>
+
+        </div>
+       
     </section>
 
-    <section id="seccion_5" class="creditos oculto"> 
+    <section id="seccion_5" class="creditos oculto">
+        
         <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
-        <br>       
-        <h1>Créditos - Estudiantes</h1>
-        <br>  
-        <span id="etiquetaJarol">Jarol Medina Marín / Ingeniero</span>
-        <br>
-        <img class="fotoCreditos" id="fotoJarol" src="img/fotoJarol.jpeg" alt="foto">
-        <br>  
-        <span id="etiquetaDaniel">Carlos Daniel Fernandez / Ingeniero</span>
-        <br>
-        <img class="fotoCreditos" id="fotoDaniel" src="img/fotoDaniel.jpeg" alt="foto">
-        <br>  
-        <span id="etiquetaLaura">Laura Barrios / Diseñadora</span>
-        <br>
-        <img class="fotoCreditos" id="fotoLaura" src="img/fotoDaniel.jpeg" alt="foto">
+        <br>        
+        <div class="divCreditos">     
+            <h1>Créditos - Estudiantes</h1>
+            <br>  
+            <span id="etiquetaJarol">Jarol Medina Marín/Ingeniero</span>
+            <br>
+            <img class="fotoCreditos" id="fotoJarol" src="img/fotoJarol.jpeg" alt="foto">
+            <br>  
+            <span id="etiquetaDaniel">Carlos D. Fernandez/Ingeniero</span>
+            <br>
+            <div class="fotoCreditos" id="fotoDaniel"></div>
+            <br>  
+            <span id="etiquetaLaura">Laura Barrios/Diseñadora</span>
+            <br>
+            <div class="fotoCreditos" id="fotoLaura"></div>
+        </div>
        
         
     </section>
@@ -149,53 +143,28 @@
         
     </section>
 
-
-    </section>
-
-    <section id="seccion_7" class="juego oculto"> 
-        <a href="#" onClick="cambiarSeccion(3);" class="boton volver">&lt;</a>
-        <br>      
-        <h1>AHOGADO</h1>
+    <section id="seccion_7" class="creditos oculto"> 
+        <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
         <br>
-        <br>       
+       <h1 id="ganastePerdiste"> ¡GANASTE! </h1>
+        <br>
+        <div class="botonesGanastePerdiste">
+            <a href="#" onclick="cambiarSeccion(3);" class="boton">Jugar de nuevo</a>
+            <a href="#" onclick="cambiarSeccion(2);" class="boton">Menú principal</a>
+        </div>
     </section>
 
     <section id="seccion_8" class="creditos oculto"> 
         <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
-        <br>       
-        <h1>Créditos - Estudiantes</h1>
-        <br>  
-        <span id="etiquetaJarol">Jarol Medina Marín / Ingeniero</span>
         <br>
-        <img class="fotoCreditos" id="fotoJarol" src="img/fotoJarol.jpeg" alt="foto">
-        <br>  
-        <span id="etiquetaDaniel">Carlos Daniel Fernandez / Ingeniero</span>
+        <h1 id="ganastePerdiste">¡PERDISTE! </h1>
         <br>
-        <img class="fotoCreditos" id="fotoDaniel" src="img/fotoDaniel.jpeg" alt="foto">
-        <br>  
-        <span id="etiquetaLaura">Laura Barrios / Diseñadora</span>
-        <br>
-        <img class="fotoCreditos" id="fotoLaura" src="img/fotoDaniel.jpeg" alt="foto">
+        <div class="botonesGanastePerdiste">
+            <a href="#" onclick="cambiarSeccion(3);" class="boton">Jugar de nuevo</a>
+            <a href="#" onclick="cambiarSeccion(2);" class="boton">Menú principal</a>
+        </div>
     </section>
 
-    <section id="seccion_9" class="creditos oculto"> 
-        <a href="#" onClick="cambiarSeccion(2);" class="boton volver">&lt;</a>
-        <br>       
-        <h1>Créditos - Estudiantes</h1>
-        <br>  
-        <span id="etiquetaJarol">Jarol Medina Marín / Ingeniero</span>
-        <br>
-        <img class="fotoCreditos" id="fotoJarol" src="img/fotoJarol.jpeg" alt="foto">
-        <br>  
-        <span id="etiquetaDaniel">Carlos Daniel Fernandez / Ingeniero</span>
-        <br>
-        <img class="fotoCreditos" id="fotoDaniel" src="img/fotoDaniel.jpeg" alt="foto">
-        <br>  
-        <span id="etiquetaLaura">Laura Barrios / Diseñadora</span>
-        <br>
-        <img class="fotoCreditos" id="fotoLaura" src="img/laura.jpeg" alt="foto">
-       
-        
-    </section>
+
 </body>
 </html>
