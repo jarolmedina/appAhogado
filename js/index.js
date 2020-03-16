@@ -1,12 +1,33 @@
 var secciones = [];
 var tiempo_splash = 2;
+const palabras = ["CAPITAN","GAVIOTA","NAVEGAR","SIRENA","FRAGATA","CAÑONES","BAÑADOR"];
+const preguntas = ["JEFE DEL BARCO","AVE MARINERA","MANIOBRAR UN BARCO","CRIATURA MITOLÓGICA","BUQUE DE GUERRA","ARMA DE PÓLVORA",
+"VESTIMENTA PARA NADAR"];
+var vidas;
+var puntos;
+var divJuego;
+var palabraSeleccionada;
+var htmlLineas = [];
+var spanPregunta;
+var aciertos;
+
 
 window.onload = function(){
     inicializarReferencias();
+    initJuego();
     setTimeout(cambiarSplash,tiempo_splash);
+}
+function initJuego(){
+    this.palabraSeleccionada = palabraAleatoria();
+    vidas = 5;
+    puntos = 1000;
+    this.aciertos = 0;
+    llenarLineas();
 }
 
 function inicializarReferencias(){
+    divJuego = document.getElementById("adivinar");
+    spanPregunta = document.getElementById("pregunta");
     secciones[1] = document.getElementById("seccion_1");
     secciones[2] = document.getElementById("seccion_2");
     secciones[3] = document.getElementById("seccion_3");
@@ -14,6 +35,8 @@ function inicializarReferencias(){
     secciones[5] = document.getElementById("seccion_5");
     secciones[6] = document.getElementById("seccion_6");
     secciones[7] = document.getElementById("seccion_7");
+    secciones[8] = document.getElementById("seccion_8");
+    
 }
 
 function cambiarSplash(){
@@ -32,4 +55,141 @@ function cambiarSeccion(id_seccion){
     secciones[id_seccion].classList.add("animated");
     secciones[id_seccion].classList.add("fadeInRight");
     secciones[id_seccion].classList.remove("oculto");
+}
+
+function palabraAleatoria() {
+    var indice = parseInt(Math.random()*(palabras.length-1));
+    spanPregunta.innerHTML = preguntas[indice];
+    console.log(spanPregunta.innerHTML);
+    return palabras[indice];
+}
+
+function llenarLineas() {
+
+    document.getElementById("divPuntos").classList.add("oculto");
+    document.getElementById("divImgAyuda").classList.add("oculto");
+
+    var varAyuda = document.getElementById("divImgAyuda");
+    var foto;
+    if(palabraSeleccionada == "CAPITAN"){
+        foto = "img/capitan.png";
+        
+    }
+    if(palabraSeleccionada == "GAVIOTA"){
+        foto = "img/gaviota.png";
+        
+    }
+    if(palabraSeleccionada == "NAVEGAR"){
+        foto = "img/navegar.png";
+        
+    }
+    if(palabraSeleccionada == "SIRENA"){
+        foto = "img/sirena.png";
+        
+    }
+    if(palabraSeleccionada == "FRAGATA"){
+        foto = "img/fragata.png";
+        
+    }
+    if(palabraSeleccionada == "CAÑONES"){
+        foto = "img/cañones.png";
+        
+    }
+    if(palabraSeleccionada == "BAÑADOR"){
+        foto = "img/bañador.png";
+        
+    }
+    varAyuda.innerHTML = "<img src='"+foto+"'>";
+    htmlLineas = [];
+    console.log(this.palabraSeleccionada);
+    for(var i = 0; i<this.palabraSeleccionada.length;i++){
+        console.log(this.palabraSeleccionada);
+        this.htmlLineas.push('<span class = "letra">_</span>');
+    }
+    divJuego.innerHTML = this.htmlLineas;
+}
+
+function procesarLetra(letra) {
+    let encontrada = false;
+    for(var i = 0; i < this.palabraSeleccionada.length;i++){
+        if(letra == this.palabraSeleccionada.charAt(i).toUpperCase()){
+
+            if(htmlLineas[i] != '<u>'+letra+'</u>'){
+                
+            console.log("entra");
+            this.htmlLineas[i] = '<u>'+letra+'</u>';
+            encontrada = true;
+            aciertos++;
+            console.log(aciertos);
+            }
+        }
+    }
+    
+    if(!encontrada){
+        if(vidas>0){
+            puntos-=200;
+            vidas--;
+        }else if(vidas == 0){
+            puntos-=200;
+            perderJuego();
+        }
+    }else{
+        divJuego.innerHTML = this.htmlLineas;
+        puntos+=200;
+
+        let divImagen = document.getElementById("divImagen");
+
+        if(divImagen.classList.contains("sinFoto")){
+            console.log("llega");
+            divImagen.classList.remove("sinFoto");
+            divImagen.classList.add("foto1");
+        } else if(divImagen.classList.contains("foto1")){
+                divImagen.classList.remove("foto1");
+                divImagen.classList.add("foto2");
+            } else if(divImagen.classList.contains("foto2")){
+                divImagen.classList.remove("foto2");
+                divImagen.classList.add("foto3");
+            }else if(divImagen.classList.contains("foto3")){
+                divImagen.classList.remove("foto3");
+                divImagen.classList.add("foto4");
+            }
+    }
+    if(aciertos == palabraSeleccionada.length){
+        ganarJuego();
+    }
+}
+function ganarJuego(){
+    acierto = 0; 
+    let divImagen = document.getElementById("divImagen");
+    divImagen.classList.remove("foto4");
+    divImagen.classList.remove("foto3");
+    divImagen.classList.remove("foto2");
+    divImagen.classList.remove("foto1");
+    divImagen.classList.add("sinFoto");
+    initJuego();
+    cambiarSeccion(7);
+    
+}
+function perderJuego(){
+    acierto = 0; 
+    let divImagen = document.getElementById("divImagen");
+    divImagen.classList.remove("foto4");
+    divImagen.classList.remove("foto3");
+    divImagen.classList.remove("foto2");
+    divImagen.classList.remove("foto1");
+    divImagen.classList.add("sinFoto");
+
+    initJuego();
+    cambiarSeccion(8);
+}
+
+function ayudita(){
+    let divImgAyuda = document.getElementById("divImgAyuda");
+    divImgAyuda.classList.toggle("oculto");
+}
+
+function mostrarPuntos(){
+    let divPuntos = document.getElementById("divPuntos");
+    divPuntos.classList.toggle("oculto");
+    divPuntos.innerHTML = "<p>"+ puntos + " pts</p>";
 }
