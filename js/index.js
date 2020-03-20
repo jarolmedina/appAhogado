@@ -1,7 +1,7 @@
 var secciones = [];
 var tiempo_splash = 2;
-const palabras = ["CAPITAN","GAVIOTA","NAVEGAR","SIRENA","FRAGATA","CAÑONES","BAÑADOR"];
-const preguntas = ["JEFE DEL BARCO","AVE MARINERA","MANIOBRAR UN BARCO","CRIATURA MITOLÓGICA","BUQUE DE GUERRA","ARMA DE PÓLVORA",
+var palabras = ["CAPITAN","GAVIOTA","NAVEGAR","SIRENA","FRAGATA","CAÑONES","BAÑADOR"];
+var preguntas = ["JEFE DEL BARCO","AVE MARINERA","MANIOBRAR UN BARCO","CRIATURA MITOLÓGICA","BUQUE DE GUERRA","ARMA DE PÓLVORA",
 "VESTIMENTA PARA NADAR"];
 var vidas;
 var puntos;
@@ -110,7 +110,7 @@ function llenarLineas() {
 }
 
 function procesarLetra(letra) {
-    let encontrada = false;
+    var encontrada = false;
     for(var i = 0; i < this.palabraSeleccionada.length;i++){
         if(letra == this.palabraSeleccionada.charAt(i).toUpperCase()){
 
@@ -137,7 +137,7 @@ function procesarLetra(letra) {
         divJuego.innerHTML = this.htmlLineas;
         puntos+=200;
 
-        let divImagen = document.getElementById("divImagen");
+        var divImagen = document.getElementById("divImagen");
 
         if(divImagen.classList.contains("sinFoto")){
             console.log("llega");
@@ -160,36 +160,36 @@ function procesarLetra(letra) {
 }
 function ganarJuego(){
     acierto = 0; 
-    let divImagen = document.getElementById("divImagen");
-    divImagen.classList.remove("foto4");
-    divImagen.classList.remove("foto3");
-    divImagen.classList.remove("foto2");
-    divImagen.classList.remove("foto1");
-    divImagen.classList.add("sinFoto");
+    var divImagen2 = document.getElementById("divImagen");
+    divImagen2.classList.remove("foto4");
+    divImagen2.classList.remove("foto3");
+    divImagen2.classList.remove("foto2");
+    divImagen2.classList.remove("foto1");
+    divImagen2.classList.add("sinFoto");
     initJuego();
     cambiarSeccion(7);
     
 }
 function perderJuego(){
     acierto = 0; 
-    let divImagen = document.getElementById("divImagen");
-    divImagen.classList.remove("foto4");
-    divImagen.classList.remove("foto3");
-    divImagen.classList.remove("foto2");
-    divImagen.classList.remove("foto1");
-    divImagen.classList.add("sinFoto");
+    var divImagen3 = document.getElementById("divImagen");
+    divImagen3.classList.remove("foto4");
+    divImagen3.classList.remove("foto3");
+    divImagen3.classList.remove("foto2");
+    divImagen3.classList.remove("foto1");
+    divImagen3.classList.add("sinFoto");
 
     initJuego();
     cambiarSeccion(8);
 }
 
 function ayudita(){
-    let divImgAyuda = document.getElementById("divImgAyuda");
+    var divImgAyuda = document.getElementById("divImgAyuda");
     divImgAyuda.classList.toggle("oculto");
 }
 
 function mostrarPuntos(){
-    let divPuntos = document.getElementById("divPuntos");
+    var divPuntos = document.getElementById("divPuntos");
     divPuntos.classList.toggle("oculto");
     divPuntos.innerHTML = "<p>"+ puntos + " pts</p>";
 }
