@@ -1,0 +1,16 @@
+{
+  "name": "app_ahogado",
+  "version": "1.0.0",
+  "description": "Aplicacion realizada para el curso aplicaciones moviles. UPB, 2020.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jarol M, Carlos D.",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.1.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-uglify": "^4.0.1"
+  }
+}
